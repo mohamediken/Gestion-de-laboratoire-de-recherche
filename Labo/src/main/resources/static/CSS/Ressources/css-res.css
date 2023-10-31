@@ -1,0 +1,65 @@
+/* Style pour la div contenant le formulaire */
+.RE {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style pour le titre "Ajouter une Ressource" */
+.RE h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style pour les labels */
+.RE label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style pour les champs de texte et la zone de texte */
+.RE input[type="text"],
+.RE textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style pour la case à cocher "Disponible" */
+.RE input[type="checkbox"] {
+    margin-bottom: 10px;
+}
+
+/* Style pour le bouton "Add" */
+.RE button[type="submit"] {
+    background-color: #0d9d98;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.RE button[type="submit"]:hover {
+    background-color: #007a74;
+}
+
+/* Style pour le lien "Back" */
+.RE a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0d9d98;
+}
+
+/* Style pour le lien "Back" au survol */
+.RE a:hover {
+    text-decoration: underline;
+}

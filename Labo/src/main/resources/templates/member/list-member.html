@@ -1,0 +1,144 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/CSS/dashboard/page.css}">
+    <title>Liste des Membres</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/member/list.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+<!-- =============== Navigation ================ -->
+<div class="container">
+
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="">
+                        <span class="icon">
+                            <ion-icon name="logo-"></ion-icon>
+                        </span>
+                    <span class="title">LABORATOIR</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/dashboard">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                    <span class="title">dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/projects/list">
+                        <span class="icon">
+                            <ion-icon name="folder-outline"></ion-icon>
+                        </span>
+                    <span class="title">projects</span>
+                </a>
+            </li>
+            <li >
+                <a href="/members/list" >
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                    <span class="title">members</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/publications/list">
+                        <span class="icon">
+                            <ion-icon name="document-text-outline"></ion-icon>
+                        </span>
+                    <span class="title">publications</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/ressources/list">
+                        <span class="icon">
+                            <ion-icon name="folder-open-outline"></ion-icon>
+                        </span>
+                    <span class="title">ressources</span>
+                </a>
+            </li>
+
+
+            <li>
+                <a th:href="@{/logout}">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- ========================= Main ==================== -->
+
+    <div class="main">
+
+        <h1>Liste des Membres</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Rôle(s)</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="member : ${members}">
+                <td th:text="${member.lastName}"></td>
+                <td th:text="${member.firstName}"></td>
+                <td th:text="${member.username}"></td>
+                <td th:text="${member.email}"></td>
+                <td th:text="${member.phone}"></td>
+
+                <td>
+            <span th:if="${member.roles != null}">
+                <span th:each="role : ${member.roles}">
+                    <span th:text="${role.rolename}"></span>
+                    <form th:if="${role.rolename != 'ROLE_ADMIN'}" method="post" th:action="@{/members/removeRole/{memberId}/{roleId} (memberId=${member.id},roleId=${role.id_role})  }">
+                        <button type="submit">Delete role</button>
+                    </form>
+                </span>
+            </span>
+                    <span th:if="${member.roles == null}">N/A</span>
+                </td>
+                <td>
+                    <a th:href="@{/members/edit/{id}(id=${member.id})}"><font color="green"><i class="fa-solid fa-pencil"></i>Update </font></a> <br>
+                    <a th:href="@{/members/delete/{id}(id=${member.id})}"><font color="red"><i class="fa-solid fa-trash"></i>Delete</font></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="/members/add">Add</a>
+    </div>
+</div>
+
+
+<!-- ====== ionicons ======= -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

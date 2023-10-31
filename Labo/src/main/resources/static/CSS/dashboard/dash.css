@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* Ajoutez ce code CSS pour le titre h1 */
+h1 {
+    font-size: 2rem;
+    color: var(--blue);
+    margin: 20px;
+}
+
+
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #0d9d98;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+
+/* --------- curve outside ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+
+/* ======================= Cards ====================== */
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+
+.cardBox .card {
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--blue);
+}
+
+.cardBox .card .cardName {
+    color: var(--black2);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+    font-size: 3.5rem;
+    color: var(--black2);
+}
+
+.cardBox .card:hover {
+    background: var(--blue);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+    color: var(--white);
+}
+
+
+/* Style pour la section Projets en Cours */
+.content-section section:nth-child(1) {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.content-section section:nth-child(1) h2 {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.content-section section:nth-child(1) ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.content-section section:nth-child(1) li {
+    color: var(--black1);
+    padding: 10px;
+}
+
+/* Style pour la section Membres */
+.content-section section:nth-child(2) {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.content-section section:nth-child(2) h2 {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.content-section section:nth-child(2) ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.content-section section:nth-child(2) li {
+    color: var(--black1);
+    padding: 10px;
+}
+
+/* Style pour la section Publications Récentes */
+.content-section section:nth-child(3) {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.content-section section:nth-child(3) h2 {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.content-section section:nth-child(3) ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.content-section section:nth-child(3) li {
+    color: var(--black1);
+    padding: 10px;
+}
+/* Ajoutez ce code CSS pour la disposition en ligne des sections */
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Pour gérer le retour à la ligne si l'espace est insuffisant */
+    gap: 20px; /* Espacement entre les sections */
+}
+
+.content-section section {
+    flex: 1; /* Chaque section prendra une part égale de l'espace disponible */
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}

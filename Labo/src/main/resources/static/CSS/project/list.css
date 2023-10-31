@@ -1,0 +1,57 @@
+/* Style pour le titre de la liste des projets */
+h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0d9d98; /* Couleur du texte */
+}
+
+/* Style pour le tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style pour les cellules d'en-tête */
+th {
+    background-color: #0d9d98; /* Couleur de fond de l'en-tête */
+    color: #fff; /* Couleur du texte de l'en-tête */
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style pour les cellules de données */
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Style pour les liens "Update" */
+a.update-link {
+    color: green; /* Couleur du texte du lien */
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Style pour les liens "Delete" */
+a.delete-link {
+    color: red; /* Couleur du texte du lien */
+    text-decoration: none;
+}
+
+/* Style pour le bouton "Ajouter un Projet" */
+a.centered-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #0d9d98; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.centered-button:hover {
+    background-color: #0a877f; /* Couleur de fond au survol */
+}

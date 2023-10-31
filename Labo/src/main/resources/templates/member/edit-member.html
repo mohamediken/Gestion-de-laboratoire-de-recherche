@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/CSS/dashboard/page.css}">
+    <title>Edit Member</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/member/edite.css}">
+
+</head>
+
+<body>
+<!-- =============== Navigation ================ -->
+<div class="container">
+
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="">
+                        <span class="icon">
+                            <ion-icon name="logo-"></ion-icon>
+                        </span>
+                    <span class="title">LABORATOIR</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/dashboard">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                    <span class="title">dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/projects/list">
+                        <span class="icon">
+                            <ion-icon name="folder-outline"></ion-icon>
+                        </span>
+                    <span class="title">projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="/members/list">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                    <span class="title">members</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/publications/list">
+                        <span class="icon">
+                            <ion-icon name="document-text-outline"></ion-icon>
+                        </span>
+                    <span class="title">publications</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/ressources/list">
+                        <span class="icon">
+                            <ion-icon name="folder-open-outline"></ion-icon>
+                        </span>
+                    <span class="title">ressources</span>
+                </a>
+            </li>
+
+
+            <li>
+                <a th:href="@{/logout}">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- ========================= Main ==================== -->
+
+    <div class="main">
+        <h1>Edit Member</h1>
+        <form th:action="@{/members/edit/{memberId}(memberId=${member.getId()})}" method="post" th:object="${member}">
+
+            <input type="hidden" name="id" th:value="${member.id}" />
+
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" th:value="${member.firstName}" required />
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" th:value="${member.lastName}" required />
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" th:value="${member.username}" required />
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" th:value="${member.email}" required />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="Phone" th:value="${member.phone}" />
+
+
+            <div>
+                <!-- Selection of the role -->
+                <label for="role">Role:</label>
+                <select id="role" name="roleId" >
+                    <!-- Use Thymeleaf to iterate over the list of roles -->
+                    <option th:each="role : ${roles}" th:value="${role.id_role}" th:text="${role.rolename}"></option>
+                </select>
+            </div>
+
+
+            <button type="submit">Save</button>
+            <a href="/members/list">Back</a>
+        </form>
+    </div>
+</div>
+
+
+<!-- ====== ionicons ======= -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

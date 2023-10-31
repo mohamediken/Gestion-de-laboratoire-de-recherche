@@ -1,0 +1,54 @@
+/* Style pour la div contenant la liste des ressources */
+.RS {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style pour le titre "Liste des Ressources" */
+.RS h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style pour le tableau */
+.RS table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Style pour les en-têtes de colonnes */
+.RS th {
+    background-color: #0d9d98;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style pour les cellules de données */
+.RS td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style pour la colonne "Actions" */
+.RS td:last-child {
+    white-space: nowrap;
+}
+
+/* Style pour les liens "update" et "delete" */
+.RS a {
+    text-decoration: none;
+    margin-right: 10px;
+    color: #0d9d98;
+}
+
+/* Style pour les liens "update" et "delete" au survol */
+.RS a:hover {
+    text-decoration: underline;
+}

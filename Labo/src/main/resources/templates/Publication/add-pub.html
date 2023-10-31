@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/CSS/dashboard/page.css}">
+    <title>Ajouté Publication</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/CSS/Publication/style-add.css}">
+
+</head>
+
+<body>
+<!-- =============== Navigation ================ -->
+<div class="container">
+
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="">
+                        <span class="icon">
+                            <ion-icon name="logo-"></ion-icon>
+                        </span>
+                    <span class="title">Laboratoire MASI</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/dashboard">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                    <span class="title">dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/projects/list">
+                        <span class="icon">
+                            <ion-icon name="folder-outline"></ion-icon>
+                        </span>
+                    <span class="title">projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="/members/list">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                    <span class="title">members</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/publications/list">
+                        <span class="icon">
+                            <ion-icon name="document-text-outline"></ion-icon>
+                        </span>
+                    <span class="title">publications</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/ressources/list">
+                        <span class="icon">
+                            <ion-icon name="folder-open-outline"></ion-icon>
+                        </span>
+                    <span class="title">ressources</span>
+                </a>
+            </li>
+
+
+            <li>
+                <a th:href="@{/logout}">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- ========================= Main ==================== -->
+
+    <div class="main">
+        <div CLASS="pub">
+        <h1> Ajouter Publication</h1>
+        <form th:action="@{/publications/add}" th:method="post">
+
+            <label for="title">Titre :</label>
+            <input type="text" id="title" name="title" required><br>
+
+            <label for="auteur">Auteur :</label>
+            <input type="text" id="auteur" name="auteur" required><br>
+
+            <label for="publicationDate">Date de Publication:</label>
+            <input type="date" id="publicationDate" name="publicationDate" required><br>
+
+            <label for="project">Project :</label>
+            <select id="project" name="project.id">
+                <option value="" disabled selected>Sélectionnez un projet</option>
+                <option th:each="project : ${projects}" th:value="${project.id}" th:text="${project.title}"></option>
+            </select><br>
+
+            <input type="submit" value="add">
+            <a href="/publications/list" >Back</a>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- ====== ionicons ======= -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

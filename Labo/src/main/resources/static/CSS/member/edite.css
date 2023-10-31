@@ -1,0 +1,66 @@
+/* Styles for the Edit Member Form */
+
+/* Form container styling */
+form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: #0d9d98; /* Use the color #d2669f for the header */
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Button styling */
+button[type="submit"] {
+    background-color: #0d9d98; /* Use the color #d2669f for the button background */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0d9d98; /* Change the hover color to your preference */
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+    color: #0d9d98;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Error message styling (if needed) */
+.error-message {
+    color: #ff0000; /* Change the color to your preference */
+    font-size: 14px;
+    margin-top: 5px;
+}

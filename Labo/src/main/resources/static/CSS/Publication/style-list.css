@@ -1,0 +1,53 @@
+/* Style pour la div contenant la liste des publications */
+.pub {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour le titre à l'intérieur de la classe "pub" */
+.pub .title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style pour le tableau à l'intérieur de la classe "pub" */
+.pub table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style pour l'en-tête du tableau à l'intérieur de la classe "pub" */
+.pub .table-header {
+    background-color: #0d9d98;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Style pour les cellules de données du tableau à l'intérieur de la classe "pub" */
+.pub .table-data {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Style pour le lien "Add" à l'intérieur de la classe "pub" */
+.pub .add-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #be6594;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pub .add-link:hover {
+    background-color: #0d9d98;
+}

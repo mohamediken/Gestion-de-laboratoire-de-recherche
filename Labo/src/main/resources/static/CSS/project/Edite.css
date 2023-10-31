@@ -1,0 +1,52 @@
+/* Style de base pour le formulaire */
+h2 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea,
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #0d9d98;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0d9d98;
+}
+
+a {
+    text-decoration: none;
+    color: #0d9d98;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/* Style pour le lien "Back" */
+a:hover {
+    text-decoration: underline;
+}
